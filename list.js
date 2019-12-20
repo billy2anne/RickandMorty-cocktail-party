@@ -6,13 +6,6 @@ class BarList {
     this.failedCharactersFromServer = this.failedCharactersFromServer.bind(this);
     this.loadCharacter = this.loadCharacter.bind(this);
     this.addCharacter = this.addCharacter.bind(this);
-
-
-
-
-
-
-
   }
 
   //LEFT OFF ON ADD CHARACTER
@@ -41,7 +34,7 @@ class BarList {
   this.domElements.areas.list.empty().append(charactersRenderList);
   }
 
-  displayCharacters(){}
+displayCharacters(){}
 
 
 getCharactersFromServer(){
@@ -70,8 +63,5 @@ failedCharactersFromServer(){
   console.log('there was an error')
 
 }
-
-
-
 
 }

@@ -6,7 +6,7 @@ body {
 
 }
 
-header {
+header{
     height: 18vh;
     margin: auto;
     background-color: #262324;
@@ -41,21 +41,21 @@ header {
     border-radius: 2em;
 }
 
-.characterlist{
+.characterList{
     width: 70%;
     background-color: #57655d;
     margin: 5px 10px 5px 10px;
     border-radius: 2em;
 }
 
-.characterImg{
+.characterImage{
     width: 25%;
     background-color: #796c3a;
-     border-radius: 2em;
-      margin: 5px;
+    border-radius: 2em;
+    margin: 5px;
 }
 
-.ingredientDetails{
+.recipeDetails{
    width: 50%;
    background-color: #b2683e;
    border-radius: 2em;

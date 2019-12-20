@@ -27,7 +27,6 @@ return characterContainer
 
 renderCharacterImagePopOut(){
 //append to class characterImage
-//
 
 }
 
@@ -38,20 +37,6 @@ processCharacterDetailsFromServer(){}
 
 
 failCharacterDetailsFromServer(){}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
