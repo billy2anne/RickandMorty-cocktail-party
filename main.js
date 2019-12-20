@@ -5,13 +5,14 @@ var list;
 
 function initializeApp(){
 
-  list = new Barlist({
+
+  list = new BarList({
     characterListArea: '.characterList',
     characterDetailsArea: '.characterImage',
     recipeDetails: '.recipeDetails',
     drinksRecipe: '.drinkImage'
   })
 
-  list.getCharactersfromServer();
+  list.getCharactersFromServer();
   //addEventListeners();
 }
