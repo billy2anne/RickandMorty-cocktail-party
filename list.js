@@ -12,9 +12,9 @@ class BarList {
       areas: {
         list: $(elementConfig.characterListArea),
       }
-   }
+    }
+
   }
-  //LEFT OFF ON ADD CHARACTER
 
   addCharacter(characterData){
     var newCharacter = new Characters(characterData, {

@@ -24,7 +24,6 @@ renderListItem(){
 //append div to class characterList to div
 // name a variable for renderCharacterRow
 //create a div with a characterNameRow class
-
 var characterName = this.domElements.list.name = $("<div>", { class: 'characterNameRow', text: this.data });
 return characterName
 }
