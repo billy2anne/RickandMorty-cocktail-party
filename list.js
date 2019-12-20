@@ -56,7 +56,6 @@ getCharactersFromServer(){
 processCharactersFromServer(response){
     this.loadCharacter(response.results);
     this.render(this.characters);
-
 }
 
 failedCharactersFromServer(){

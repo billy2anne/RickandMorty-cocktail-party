@@ -23,8 +23,14 @@ renderListItem(){
 //append div to class characterList to div
 // name a variable for renderCharacterRow
 //create a div with a characterNameRow class
-var characterName = this.domElements.list.name = $("<div>", { class: 'characterNameRow', text: this.data });
+var characterName = this.domElements.list.name = $("<div>", { class: 'characterNameRow', text: this.data, click: this.handleClick });
+
 return characterName
+}
+
+
+handleClick(){
+  this.getCharacterImageFromServer();
 }
 
 renderCharacterImagePopOut(){
@@ -32,13 +38,25 @@ renderCharacterImagePopOut(){
 
 }
 
-getCharacterDetailsFromServer(){}
+getCharacterImageFromServer(){
+  debugger;
+  var settings = {
+    url: "https://rickandmortyapi.com/api/character",
+    method: "GET",
+    dataType: 'json'
+  }
+  $.ajax(settings).done(this.processCharacterImageFromServer).fail(this.failedCharacterImageFromServer);
+}
 
 
-processCharacterDetailsFromServer(){}
+processCharacterImageFromServer(response){
+  console.log(response)
 
 
-failCharacterDetailsFromServer(){}
+}
+
+
+failCharacterImageFromServer(){}
 
 
 }
