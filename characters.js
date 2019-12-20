@@ -19,7 +19,6 @@ constructor(data, callbacks){
 }
 
 renderListItem(){
-  debugger;
 //creates one row of character name
 //append div to class characterList to div
 // name a variable for renderCharacterRow

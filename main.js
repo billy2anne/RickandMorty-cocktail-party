@@ -4,7 +4,7 @@ $(document).ready( initializeApp );
 var list;
 
 function initializeApp(){
-  debugger;
+
 
   list = new BarList({
     characterListArea: '.characterList',
