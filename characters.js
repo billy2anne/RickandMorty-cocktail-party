@@ -1,7 +1,11 @@
 class Characters{
 
 constructor(data, callbacks){
+  this.handleClick = this.handleClick.bind(this);
   this.data = data;
+  this.name = null;
+  this.chosenImage = null;
+  this.characterImages = [];
   this.domElements = {
     list: {
       container: null,
@@ -12,6 +16,8 @@ constructor(data, callbacks){
     },
   };
   this.renderListItem = this.renderListItem.bind(this);
+  this.getCharacterImageFromServer = this.getCharacterImageFromServer.bind(this);
+  this.processCharacterImageFromServer = this.processCharacterImageFromServer.bind(this);
   this.renderCharacterImagePopOut = this.renderCharacterImagePopOut.bind(this);
   this.callbacks = callbacks;
 
@@ -28,20 +34,41 @@ var characterName = this.domElements.list.name = $("<div>", { class: 'characterN
 return characterName
 }
 
-
-handleClick(){
+//clicking event on row should pop up characterImage
+handleClick(event){
+  this.name = $(event.currentTarget).text();
   this.getCharacterImageFromServer();
+
+
 }
 
-renderCharacterImagePopOut(){
-//append to class characterImage
 
+loadCharacterImages(characterData){
+  debugger;
+  for (var i = 0; i < characterData.length; i++) {
+    if(this.name == characterData[i].name){
+      var characterPic = this.chosenImage = characterData[i].image;
+          this.renderCharacterImagePopOut(characterPic);
+    };
+  };
+};
+
+renderCharacterImagePopOut(image){
+  debugger;
+//append to class characterImage
+console.log('render character works');
+    this.domElements.characterImage = $('<img>', {
+    class: 'characterThumbnail',
+    alt: 'Bartender: ' + this.name,
+    src: this.characterPic
+  });
+  return this.domElements.characterImage
 }
 
 getCharacterImageFromServer(){
   debugger;
   var settings = {
-    url: "https://rickandmortyapi.com/api/character",
+    url: "https://rickandmortyapi.com/api/character/",
     method: "GET",
     dataType: 'json'
   }
@@ -50,7 +77,30 @@ getCharacterImageFromServer(){
 
 
 processCharacterImageFromServer(response){
-  console.log(response)
+  debugger;
+  this.data = response.results;
+  this.loadCharacterImages(this.data);
+  this.renderCharacterImagePopOut(this.characterPic);
+  this.callbacks.click(this);
+
+
+
+  //want to select the character name within a single object of an array of objects.
+//   results: Array(20)
+//   // 0: { id: 1, name: "Rick Sanchez", status: "Alive", species: "Human", type: "", … }
+//   // 1: { id: 2, name: "Morty Smith", status: "Alive", species: "Human", type: "", … }
+//   // 2: { id: 3, name: "Summer Smith", status: "Alive", species: "Human", type: "", … }
+//   // 3: { id: 4, name: "Beth Smith", status: "Alive", species: "Human", type: "", … }
+//   // 4: { id: 5, name: "Jerry Smith", status: "Alive", species: "Human", type: "", … }
+//   console.log(response);
+//  this.data = response.results;
+//  for(var i = 0 ; i < this.data.results.lengths; i++){
+//     var characterPic = this.data.results[i].image;
+//     if(characterPic ===  )
+
+
+
+
 
 
 }

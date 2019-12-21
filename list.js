@@ -2,6 +2,7 @@
 class BarList {
   constructor(elementConfig){
     this.characters = [];
+    this.characterPic = null;
     this.getCharactersFromServer = this.getCharactersFromServer.bind(this);
     this.processCharactersFromServer = this.processCharactersFromServer.bind(this);
     this.failedCharactersFromServer = this.failedCharactersFromServer.bind(this);
@@ -11,12 +12,13 @@ class BarList {
     this.domElements = {
       areas: {
         list: $(elementConfig.characterListArea),
+        characterImage: $(elementConfig.characterDetailsArea),
       }
     }
-
   }
 
-  addCharacter(characterData){
+
+  addCharacter(characterData) {
     var newCharacter = new Characters(characterData, {
       click: this.handleRowClick,
     });
@@ -24,20 +26,30 @@ class BarList {
     return this.characters.length;
   }
 
-
-
-  loadCharacter(characterList){
-    for (var i = 0; i < characterList.length; i++){
+  loadCharacter(characterList) {
+    for (var i = 0; i < characterList.length; i++) {
       this.addCharacter(characterList[i].name);
     }
   }
 
+  handleRowClick(characterImage){
+    debugger;
+    this.characterPic = characterImage;
+    renderImagetoPage(this.characterPic);
+  }
 
 
   render(charactersList){
     //create renderlist item in characters.js
   var  charactersRenderList = charactersList.map(value => value.renderListItem());
   this.domElements.areas.list.empty().append(charactersRenderList);
+  }
+
+  renderImagetoPage(characterImage){
+    debugger;
+    this.domElements.areas.characterImage.empty().append()
+
+
   }
 
 displayCharacters(){}
