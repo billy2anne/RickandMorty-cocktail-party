@@ -82,3 +82,7 @@ header{
     border-radius: 2em;
      margin: 5px;
 }
+
+.characterThumbnail{
+   background-size: cover;
+}

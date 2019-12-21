@@ -33,8 +33,13 @@ class BarList {
     }
   }
 
-  handleRowClick(){
-    this.renderImagetoPage(this.domElements.characterImage);
+  handleRowClick(characters){
+    debugger;
+
+    var renderCharacterImage = characters.chosenImage;
+    var imageRow = characters.renderCharacterImagePopOut(renderCharacterImage);
+    this.domElements.areas.characterImage.empty().append(imageRow);
+
   }
 
 
@@ -44,12 +49,6 @@ class BarList {
   this.domElements.areas.list.empty().append(charactersRenderList);
   }
 
-  renderImagetoPage(characterImage){
-    debugger;
-    this.domElements.areas.characterImage.empty().append()
-
-
-  }
 
 displayCharacters(){}
 
