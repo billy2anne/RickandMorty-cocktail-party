@@ -84,5 +84,5 @@ header{
 }
 
 .characterThumbnail{
-   background-size: cover;
+   align-content: center;
 }
