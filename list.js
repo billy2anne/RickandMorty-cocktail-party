@@ -1,6 +1,7 @@
 
 class BarList {
   constructor(elementConfig){
+    this.handleRowClick = this.handleRowClick.bind(this);
     this.characters = [];
     this.characterPic = null;
     this.getCharactersFromServer = this.getCharactersFromServer.bind(this);
@@ -32,10 +33,8 @@ class BarList {
     }
   }
 
-  handleRowClick(characterImage){
-    debugger;
-    this.characterPic = characterImage;
-    renderImagetoPage(this.characterPic);
+  handleRowClick(){
+    this.renderImagetoPage(this.domElements.characterImage);
   }
 
 

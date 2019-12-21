@@ -11,14 +11,14 @@ constructor(data, callbacks){
       container: null,
       name: null
     },
-    imagePopout: {
-      image: null
-    },
+    characterImage: null,
   };
   this.renderListItem = this.renderListItem.bind(this);
+  this.renderCharacterImagePopOut = this.renderCharacterImagePopOut.bind(this);
   this.getCharacterImageFromServer = this.getCharacterImageFromServer.bind(this);
   this.processCharacterImageFromServer = this.processCharacterImageFromServer.bind(this);
   this.renderCharacterImagePopOut = this.renderCharacterImagePopOut.bind(this);
+  this.loadCharacterImages = this.loadCharacterImages.bind(this);
   this.callbacks = callbacks;
 
 
@@ -48,21 +48,25 @@ loadCharacterImages(characterData){
   for (var i = 0; i < characterData.length; i++) {
     if(this.name == characterData[i].name){
       var characterPic = this.chosenImage = characterData[i].image;
-          this.renderCharacterImagePopOut(characterPic);
-    };
-  };
-};
+      return characterPic;
+    }
+  }
+}
 
 renderCharacterImagePopOut(image){
   debugger;
 //append to class characterImage
-console.log('render character works');
-    this.domElements.characterImage = $('<img>', {
-    class: 'characterThumbnail',
-    alt: 'Bartender: ' + this.name,
-    src: this.characterPic
-  });
-  return this.domElements.characterImage
+  var characterPic = image;
+  if(characterPic){
+      this.domElements.characterImage = $('<img>', {
+      class: 'characterThumbnail',
+      alt: 'Bartender: ' + this.name,
+      src: characterPic,
+    });
+    return this.domElements.characterImage
+  }else{
+    return
+  }
 }
 
 getCharacterImageFromServer(){
@@ -80,7 +84,7 @@ processCharacterImageFromServer(response){
   debugger;
   this.data = response.results;
   this.loadCharacterImages(this.data);
-  this.renderCharacterImagePopOut(this.characterPic);
+  this.renderCharacterImagePopOut(this.chosenImage);
   this.callbacks.click(this);
 
 
