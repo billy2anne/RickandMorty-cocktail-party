@@ -9,12 +9,14 @@ body {
 header{
     height: 18vh;
     margin: auto;
-    background-color: #262324;
+    background-color: #562520;
+    font-size: 40px;
+    font-family: monospace
 }
 
 .headerImage{
     background-image: url(./images/banner.jpeg);
-    height: 80%;
+    height: 40%;
     width: 100%;
     background-size: contain;
     background-position-y: 50%;
@@ -69,6 +71,11 @@ header{
     margin: 5px;
 }
 
+.drinkDetailsHeader{
+    font-size: 25px;
+    font-family: monospace;
+}
+
 .recipeDetails{
    width: 50%;
    background-color: #b2683e;
@@ -83,6 +90,37 @@ header{
      margin: 5px;
 }
 
+.bartender{
+    width: 95%;
+    height: 100%;
+    border: 2px solid black;
+    text-align: center;
+    margin: 2px;
+    border-radius: 0.3em;
+    background-color: #908147;
+}
+
+.drinkDetailsContainer{
+    padding: 10px;
+
+
+}
+
 .characterThumbnail{
-   align-content: center;
+   	width: 70%;
+	height: 50%;
+	background-size: cover;
+    background-position: center;
+    margin: auto;
+    padding-left: 50px;
+    padding-top: 15px;
+
+}
+
+.imageText{
+    height: 20%;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    font-family: monospace;
 }

@@ -18,7 +18,7 @@ class Characters{
     this.renderCharacterImagePopOut = this.renderCharacterImagePopOut.bind(this);
     this.loadCharacterImages = this.loadCharacterImages.bind(this);
     this.callbacks = callbacks;
-  }
+  };
 
   renderListItem(){
     var characterName = this.domElements.list.name = $("<div>",{
@@ -27,23 +27,21 @@ class Characters{
       click: this.handleClick
     });
     return characterName
-  }
+  };
 
   handleClick(event){
     this.name = $(event.currentTarget).text();
     this.getCharacterImageFromServer();
-  }
+  };
 
-  getCharacterImageFromServer() {
-    debugger;
+  getCharacterImageFromServer(){
     var settings = {
       url: "https://rickandmortyapi.com/api/character/",
       method: "GET",
       dataType: 'json'
     }
     $.ajax(settings).done(this.processCharacterImageFromServer).fail(this.failedCharacterImageFromServer);
-  }
-
+  };
 
   loadCharacterImages(characterData){
     for (var i = 0; i < characterData.length; i++) {
@@ -55,30 +53,36 @@ class Characters{
   };
 
   renderCharacterImagePopOut(image){
+    debugger;
+
     var characterPic = image;
     if(characterPic){
+
+    var characterImgContainer = this.domElements.characterImgContainer = $('<div>',{class: characterImgContainer})
+    var figCaption = this.domElements.figCaption = $('<div>', { class: 'imageText', text: 'Hello, I am your bartender,  ' + this.name + '!'});
         this.domElements.characterImage = $('<img>', {
         class: 'characterThumbnail',
         alt: 'Bartender: ' + this.name,
         src: characterPic,
+        text: this.name
       });
-      return this.domElements.characterImage
+
+      characterImgContainer.append(this.domElements.characterImage, figCaption)
+      return characterImgContainer;
+      // return this.domElements.characterImage
     }else{
       return
     };
   };
-
 
   processCharacterImageFromServer(response){
     this.data = response.results;
     this.loadCharacterImages(this.data);
     this.renderCharacterImagePopOut(this.chosenImage);
     this.callbacks.click(this);
-  }
-
+  };
 
   failCharacterImageFromServer(){
     console.log('an error has occured')
-  }
-
-  }
+  };
+}
