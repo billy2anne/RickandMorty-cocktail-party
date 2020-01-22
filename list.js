@@ -49,7 +49,6 @@ class BarList {
   };
 
   renderRandomDrinkRecipe(randomDrink){
-    debugger;
     var drink = randomDrink.randomDrinkData
     var drinkDetailstoAppend = randomDrink.renderDrinkDetails(drink)
     console.log(randomDrink);
@@ -59,7 +58,6 @@ class BarList {
 
   //left off on drinksdata
   getDrinksData(){
-    debugger;
     var drink = new Drinks({request: this.renderRandomDrinkRecipe});
       drink.getDrinksFromServer();
   }

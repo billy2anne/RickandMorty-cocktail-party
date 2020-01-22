@@ -53,8 +53,6 @@ class Characters{
   };
 
   renderCharacterImagePopOut(image){
-    debugger;
-
     var characterPic = image;
     if(characterPic){
 

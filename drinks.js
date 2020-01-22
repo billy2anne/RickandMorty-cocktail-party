@@ -9,7 +9,6 @@ class Drinks{
   }
 
   getDrinksFromServer() {
-    debugger;
     var settings = {
       "async": true,
       "crossDomain": true,

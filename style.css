@@ -3,7 +3,6 @@
 body {
     margin: 0;
     font-family: Spectral;
-
 }
 
 header{
@@ -102,8 +101,6 @@ header{
 
 .drinkDetailsContainer{
     padding: 10px;
-
-
 }
 
 .characterThumbnail{
@@ -114,7 +111,6 @@ header{
     margin: auto;
     padding-left: 50px;
     padding-top: 15px;
-
 }
 
 .imageText{
