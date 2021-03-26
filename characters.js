@@ -15,7 +15,6 @@ class Characters{
     this.renderCharacterImagePopOut = this.renderCharacterImagePopOut.bind(this);
     this.getCharacterImageFromServer = this.getCharacterImageFromServer.bind(this);
     this.processCharacterImageFromServer = this.processCharacterImageFromServer.bind(this);
-    this.renderCharacterImagePopOut = this.renderCharacterImagePopOut.bind(this);
     this.loadCharacterImages = this.loadCharacterImages.bind(this);
     this.callbacks = callbacks;
   };
@@ -26,13 +25,13 @@ class Characters{
       text: this.data,
       click: this.handleClick
     });
-    return characterName
-  };
+    return characterName;
+  }
 
   handleClick(event){
     this.name = $(event.currentTarget).text();
     this.getCharacterImageFromServer();
-  };
+  }
 
   getCharacterImageFromServer(){
     var settings = {
@@ -41,7 +40,7 @@ class Characters{
       dataType: 'json'
     }
     $.ajax(settings).done(this.processCharacterImageFromServer).fail(this.failedCharacterImageFromServer);
-  };
+  }
 
   loadCharacterImages(characterData){
     for (var i = 0; i < characterData.length; i++) {
@@ -50,7 +49,7 @@ class Characters{
         return characterPic;
       };
     };
-  };
+  }
 
   renderCharacterImagePopOut(image){
     var characterPic = image;
@@ -71,16 +70,16 @@ class Characters{
     }else{
       return
     };
-  };
+  }
 
   processCharacterImageFromServer(response){
     this.data = response.results;
     this.loadCharacterImages(this.data);
     this.renderCharacterImagePopOut(this.chosenImage);
     this.callbacks.click(this);
-  };
+  }
 
   failCharacterImageFromServer(){
     console.log('an error has occured')
-  };
+  }
 }

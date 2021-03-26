@@ -15,7 +15,8 @@ class BarList {
       areas: {
         list: $(elementConfig.characterListArea),
         characterImage: $(elementConfig.characterDetailsArea),
-        randomDrink: $(elementConfig.recipeDetails)
+        randomDrink: $(elementConfig.recipeDetails),
+        drinkImage: $(elementConfig.drinksImg)
       }
     };
   };
@@ -49,10 +50,13 @@ class BarList {
   };
 
   renderRandomDrinkRecipe(randomDrink){
+    debugger;
     var drink = randomDrink.randomDrinkData
     var drinkDetailstoAppend = randomDrink.renderDrinkDetails(drink)
+    var drinkImagestoAppend = randomDrink.renderDrinkImage(drink);
     console.log(randomDrink);
-   this.domElements.areas.randomDrink.empty().append(drinkDetailstoAppend);
+    this.domElements.areas.randomDrink.empty().append(drinkDetailstoAppend);
+    this.domElements.areas.drinkImage.empty().append(drinkImagestoAppend);
 
   }
 
@@ -73,8 +77,8 @@ class BarList {
 
 
   processCharactersFromServer(response){
-      this.loadCharacter(response.results);
-      this.render(this.characters);
+    this.loadCharacter(response.results);
+    this.render(this.characters);
   };
 
   failedCharactersFromServer(){

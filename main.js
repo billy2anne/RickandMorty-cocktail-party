@@ -8,7 +8,7 @@ function initializeApp(){
     characterListArea: '.characterList',
     characterDetailsArea: '.characterImage',
     recipeDetails: '.recipeDetails',
-    drinksRecipe: '.drinkImage'
+    drinksImg: '.drinkImage'
   });
   list.getCharactersFromServer();
 }
