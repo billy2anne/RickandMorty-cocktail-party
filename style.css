@@ -10,7 +10,7 @@ header{
     margin: auto;
     background-color: #562520;
     font-size: 40px;
-    font-family: monospace
+    font-family: monospace;
 }
 
 .headerImage{
@@ -68,6 +68,11 @@ header{
     background-color: #796c3a;
     border-radius: 2em;
     margin: 5px;
+}
+
+span {
+ font-size: 20px;
+ margin-left: 3%;
 }
 
 .drink{

@@ -54,13 +54,10 @@ class BarList {
     var drink = randomDrink.randomDrinkData
     var drinkDetailstoAppend = randomDrink.renderDrinkDetails(drink)
     var drinkImagestoAppend = randomDrink.renderDrinkImage(drink);
-    console.log(randomDrink);
     this.domElements.areas.randomDrink.empty().append(drinkDetailstoAppend);
     this.domElements.areas.drinkImage.empty().append(drinkImagestoAppend);
-
   }
 
-  //left off on drinksdata
   getDrinksData(){
     var drink = new Drinks({request: this.renderRandomDrinkRecipe});
       drink.getDrinksFromServer();

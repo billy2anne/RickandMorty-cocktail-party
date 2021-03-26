@@ -36,7 +36,6 @@ class Drinks{
     this.callbacks.request(this);
   }
 
-///left off here
   renderDrinkDetails(randomDrink){
     debugger;
     var drink = this.randomDrinkData;
@@ -65,24 +64,3 @@ class Drinks{
     }
   }
 }
-
-// renderCharacterImagePopOut(image){
-//   var characterPic = image;
-//   if (characterPic) {
-
-//     var characterImgContainer = this.domElements.characterImgContainer = $('<div>', { class: characterImgContainer })
-//     var figCaption = this.domElements.figCaption = $('<div>', { class: 'imageText', text: 'Hello, I am your bartender,  ' + this.name + '!' });
-//     this.domElements.characterImage = $('<img>', {
-//       class: 'characterThumbnail',
-//       alt: 'Bartender: ' + this.name,
-//       src: characterPic,
-//       text: this.name
-//     });
-
-//     characterImgContainer.append(this.domElements.characterImage, figCaption)
-//     return characterImgContainer;
-//     // return this.domElements.characterImage
-//   } else {
-//     return
-//   };
-// }
