@@ -1,2 +1,2 @@
 # RickandMorty-cocktail-party
-Final Project 
+Final Project
