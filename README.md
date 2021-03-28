@@ -16,3 +16,4 @@ An application that utilizes two fun API's introducing Rick and Morty Characters
 Try the application live at
 
 ## Preview
+![Rick and Morty Bar Website](images/frontend.png)
