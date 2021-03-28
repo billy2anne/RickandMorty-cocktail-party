@@ -1,5 +1,3 @@
-
-
 body {
     margin: 0;
     font-family: Spectral;
@@ -11,6 +9,7 @@ header{
     background-color: #562520;
     font-size: 40px;
     font-family: monospace;
+    text-align: center;
 }
 
 .headerImage{
@@ -65,7 +64,6 @@ header{
 
 .characterImage{
     width: 25%;
-    background-color: #796c3a;
     border-radius: 2em;
     margin: 5px;
 }
@@ -77,7 +75,7 @@ span {
 
 .drink{
    	width: 70%;
-	height: 80%;
+	height: 40%;
 	background-size: cover;
     background-position: center;
     margin: auto;
@@ -88,20 +86,19 @@ span {
 .drinkDetailsHeader{
     font-size: 25px;
     font-family: monospace;
-}
+ }
 
 .recipeDetails{
    width: 50%;
-   background-color: #b2683e;
    border-radius: 2em;
-    margin: 5px;
+   margin: 5px;
 }
 
 .drinkImage{
     width: 25%;
-    background-color: #b2925a;
+    /* background-color: #b2925a; */
     border-radius: 2em;
-     margin: 5px;
+    margin: 5px;
 }
 
 .bartender{
@@ -131,7 +128,14 @@ span {
 .imageText{
     height: 20%;
     font-size: 20px;
-    color: black;
+    color:black;
     text-align: center;
     font-family: monospace;
+}
+
+.drinkLabel{
+    width: 60%;
+    height: 30%;
+    margin: auto;
+    text-align: center;
 }

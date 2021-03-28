@@ -37,7 +37,7 @@ class Drinks{
   }
 
   renderDrinkDetails(randomDrink){
-    debugger;
+    $('.recipeDetails').css('background-color', '#b2683e');
     var drink = this.randomDrinkData;
     var drinkDetailsContainer = $('<div>', { class: 'drinkDetailsContainer'});
     var drinkRecommmendationHeader = $('<h1>', { class: 'drinkDetailsHeader', text: 'Bartender Recommendations: ' });
@@ -50,15 +50,21 @@ class Drinks{
   }
 
   renderDrinkImage(drink){
-    debugger;
     var drinkImg = drink;
     if (drink){
+      $('.drinkImage').css('background-color', '#b2925a')
+      var container = $('<div>', {class: 'imageDrinkContainer'})
       var img = this.drinkImage = $('<img>', {
         class: 'drink',
         alt:'drink picture',
         src: drink.strDrinkThumb,
       });
-      return img;
+      var drinkName = $('<div>', {
+        class:'drinkLabel',
+        text: drink.strDrink,
+      })
+      container.append(img, drinkName);
+      return container;
     } else {
       return;
     }

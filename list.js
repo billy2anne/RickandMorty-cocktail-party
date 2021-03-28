@@ -44,7 +44,6 @@ class BarList {
 
 
   render(charactersList){
-    //create renderlist item in characters.js
   var  charactersRenderList = charactersList.map(value => value.renderListItem());
   this.domElements.areas.list.empty().append(charactersRenderList);
   };

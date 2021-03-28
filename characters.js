@@ -54,7 +54,7 @@ class Characters{
   renderCharacterImagePopOut(image){
     var characterPic = image;
     if(characterPic){
-
+      $('.characterImage').css('background-color', '#796c3a');
     var characterImgContainer = this.domElements.characterImgContainer = $('<div>',{class: characterImgContainer})
     var figCaption = this.domElements.figCaption = $('<div>', { class: 'imageText', text: 'Hello, I am your bartender,  ' + this.name + '!'});
         this.domElements.characterImage = $('<img>', {
@@ -66,7 +66,6 @@ class Characters{
 
       characterImgContainer.append(this.domElements.characterImage, figCaption)
       return characterImgContainer;
-      // return this.domElements.characterImage
     }else{
       return
     };
