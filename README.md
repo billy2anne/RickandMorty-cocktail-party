@@ -13,7 +13,7 @@ An application that utilizes two fun API's introducing Rick and Morty Characters
 * User can view an image of the random cocktail drink
 
 ## Live Demo
-Try the application live at
+Try the application live at [https://kimberly-roque.github.io/RickandMorty-cocktail-party/](https://kimberly-roque.github.io/RickandMorty-cocktail-party/)
 
 ## Preview
 ![Rick and Morty Bar Website](images/frontend.png)
